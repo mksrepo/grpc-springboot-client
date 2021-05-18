@@ -1,0 +1,4 @@
+spring:
+  grpc:
+    enable-reflection: true
+    server: 6565
