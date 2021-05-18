@@ -1,4 +1,4 @@
-package com.grpc.log.controller;
+package com.grpc.log.api;
 
 import com.proto.greet.GreetRequest;
 import com.proto.greet.GreetResponse;
@@ -7,14 +7,13 @@ import com.proto.greet.Greeting;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@org.springframework.web.bind.annotation.RestController
-
-public class RestApi {
+@RestController
+public class GreetingController {
     @GetMapping
-    public String greeting() {
-        // Getting channel instance
-        ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 6565)
+    public String greet() {// Getting channel instance
+        ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 50051)
                 .usePlaintext()
                 .build();
         // Getting client

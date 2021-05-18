@@ -1,4 +1,5 @@
+server:
+  port: 8888
 spring:
   grpc:
-    enable-reflection: true
-    server: 6565
+    enabled: false
